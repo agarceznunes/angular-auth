@@ -1,0 +1,14 @@
+.header{
+	width: 100%;
+	background-color: #fff;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+	-webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+	-moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+	box-shadow: 2px 4px 58px -20px rgba(0,0,0,1); 
+}
+
+.header-logo{
+	max-width: 200px;
+}
