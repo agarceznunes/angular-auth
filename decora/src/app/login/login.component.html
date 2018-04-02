@@ -1,7 +1,7 @@
 <div class="login">
 	<div class="login-container">
 		<div class="login-header">
-			<h3>Formulário de Login</h3>
+			<h2>Formulário de Login</h2>
 		</div>
 		<div class="login-body">
             <mat-form-field>
@@ -12,9 +12,14 @@
             	<!-- <mat-icon>lock</mat-icon> -->
 				<input matInput type='password' placeholder="Password">
 			</mat-form-field>
-			<button mat-raised-button class="login-button"> 
-                <mat-icon>input</mat-icon> Login
-            </button>
+			<div class="login-form-buttons">
+				<button [routerLink]="['/']" mat-raised-button class="login-button"> 
+	                <mat-icon>input</mat-icon> Login
+	            </button>
+	            <button [routerLink]="['/register']" mat-raised-button class="register-button"> 
+	                <mat-icon>input</mat-icon> Resgistrar
+	            </button>
+	        </div>    
 		</div>	
 	</div>
 </div>

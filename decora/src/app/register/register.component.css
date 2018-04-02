@@ -1,0 +1,24 @@
+.register-card{
+	margin: 60px;
+	padding: 30px;
+}
+
+.register-form{
+	display: flex;
+  	flex-direction: column;
+}
+
+.register-form-buttons{
+	display: inline-block;
+}
+
+.register-button{
+	width: 150px;
+	background-color: #3f51b5;
+	color: #fff;
+	margin: 10px;
+}
+
+.cancel-button{
+	width: 150px;
+}

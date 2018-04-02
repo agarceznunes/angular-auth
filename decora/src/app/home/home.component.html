@@ -1,0 +1,15 @@
+<div class="home">
+	<mat-card class="users-card">
+	    <h1>Bem vindo, Alexandre!</h1>
+	    <h3>Usuários:</h3>
+	    <ul>
+	        <li>
+	            Alexandre 
+	            <button mat-raised-button (click)="deleteUser(user.id)" class="remove-button">
+	            	<mat-icon>delete</mat-icon>
+	            </button>
+	        </li>
+	    </ul>
+	    <p><a [routerLink]="['/login']">Logout</a></p>
+	</mat-card>	
+</div>

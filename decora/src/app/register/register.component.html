@@ -1,0 +1,31 @@
+<div class="register">
+    <mat-card class="register-card">
+	    <h2>Registro de Usuário</h2>
+	    <form name="form" class="register-form" novalidate>
+	    	<mat-form-field>
+            	<!-- <mat-icon>person</mat-icon> -->
+				<input matInput placeholder="Nome">
+			</mat-form-field>
+			<mat-form-field>
+            	<!-- <mat-icon>person</mat-icon> -->
+				<input matInput placeholder="Sobrenome">
+			</mat-form-field>
+			<mat-form-field>
+            	<!-- <mat-icon>person</mat-icon> -->
+				<input matInput placeholder="Nome de Usuário">
+			</mat-form-field>
+			<mat-form-field>
+            	<!-- <mat-icon>person</mat-icon> -->
+				<input matInput placeholder="Senha">
+			</mat-form-field>
+			<div class="register-form-buttons">
+				<button mat-raised-button class="register-button"> 
+	                <mat-icon>input</mat-icon> Registrar
+	            </button>
+	            <button mat-raised-button class="cancel-button" [routerLink]="['/login']"> 
+	                <mat-icon>input</mat-icon> Cancelar
+	            </button>
+	        </div>
+	    </form>
+	</mat-card>
+</div>
