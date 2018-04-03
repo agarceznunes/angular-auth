@@ -1,10 +1,10 @@
 <div class="home">
 	<mat-card class="users-card">
-	    <h1>Bem vindo, Alexandre!</h1>
+	    <h1>Bem vindo, {{currentUser.firstName}}!</h1>
 	    <h3>Usuários:</h3>
 	    <ul>
-	        <li>
-	            Alexandre 
+	        <li *ngFor="let user of users">
+	            {{user.username}} ({{user.firstName}} {{user.lastName}}) 
 	            <button mat-raised-button (click)="deleteUser(user.id)" class="remove-button">
 	            	<mat-icon>delete</mat-icon>
 	            </button>

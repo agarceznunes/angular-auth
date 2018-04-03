@@ -17,6 +17,10 @@ const APP_ROUTES: Routes = [
     {
         path: 'register',
         component: RegisterComponent
+    },
+    {
+        path: '**',
+        redirectTo: ''
     }
 ];
 
