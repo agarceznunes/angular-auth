@@ -14,9 +14,11 @@
 	            <td>{{user.firstName | titlecase}}  {{user.lastName | titlecase}}</td>
 	            <td>{{(user.admin === true) ?  'Sim' : 'Não'}}</td>
 	            <td *ngIf="currentUser.admin" class="center">
-	            	<button mat-mini-fab (click)="deleteUser(user.id)" class="remove-button">
-	            		<mat-icon>delete</mat-icon>
-	            	</button>
+	            	<span matTooltip="Remover usuário" matTooltipShowDelay="500">
+	            		<button mat-mini-fab (click)="deleteUser(user.id)" class="remove-button">
+	            			<mat-icon>delete</mat-icon>
+	            		</button>
+	            	</span>
 	           	</td>
 	        </tr>
 	    </table>

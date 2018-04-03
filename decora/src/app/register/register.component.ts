@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   model: any = {};
   loading = false;
   currentUser: User;
+  users: User[] = [];
   admin: boolean = false;
   
   constructor(private router: Router, private userService: UserService) { 
@@ -24,7 +25,8 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.currentUser);
+    this.firstAdmin();
+    console.log(this.firstAdmin());
   }
 
   register() {
@@ -39,6 +41,20 @@ export class RegisterComponent implements OnInit {
           //this.alertService.error(error);
           this.loading = false;
         });
+    }
+
+    firstAdmin(){
+      this.users = JSON.parse(localStorage.getItem('users'));
+
+      for (var i = 0; i < this.users.length; i++){
+          if (this.users[i] != undefined){
+            if (this.users[i].admin == true){
+              return false;
+            }            
+          } else {
+            return true;
+          }
+      }
     }
 }
 
