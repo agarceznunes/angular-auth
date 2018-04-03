@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
  
-import {MatButtonModule, MatGridListModule, MatInputModule, MatIconModule, MatCardModule, MatTableModule} from '@angular/material';
+import {MatButtonModule, MatGridListModule, MatInputModule, MatIconModule, MatCardModule, MatTableModule, MatCheckboxModule} from '@angular/material';
  
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { UserService } from './_services/user.service';
@@ -39,7 +39,8 @@ import { RegisterComponent } from './register/register.component';
       MatInputModule,
       MatIconModule,
       MatCardModule,
-      MatTableModule
+      MatTableModule,
+      MatCheckboxModule
     ],
     providers: [
       AuthGuard,

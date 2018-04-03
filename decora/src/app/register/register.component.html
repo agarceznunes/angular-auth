@@ -3,21 +3,18 @@
 	    <h2>Registro de Usuário</h2>
 	    <form name="form" class="register-form" (ngSubmit)="register()" novalidate>
 	    	<mat-form-field>
-            	<!-- <mat-icon>person</mat-icon> -->
 				<input matInput placeholder="Nome" type="text" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required>
 			</mat-form-field>
 			<mat-form-field>
-            	<!-- <mat-icon>person</mat-icon> -->
 				<input matInput placeholder="Sobrenome" type="text" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required>
 			</mat-form-field>
 			<mat-form-field>
-            	<!-- <mat-icon>person</mat-icon> -->
 				<input matInput placeholder="Usuário" type="text" name="username" [(ngModel)]="model.username" #username="ngModel" required>
 			</mat-form-field>
 			<mat-form-field>
-            	<!-- <mat-icon>person</mat-icon> -->
 				<input matInput type="password" placeholder="Senha" name="password" [(ngModel)]="model.password" #password="ngModel" required>
 			</mat-form-field>
+			<mat-checkbox name="admin" [(ngModel)]="model.admin" #admin="ngModel">Admin</mat-checkbox>
 			<div class="register-form-buttons">
 				<button mat-raised-button class="register-button" [disabled]="loading"> 
 	                <mat-icon>done</mat-icon> Salvar

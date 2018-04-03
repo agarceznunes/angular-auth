@@ -8,6 +8,11 @@
   	flex-direction: column;
 }
 
+.register-form mat-checkbox{
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
 .register-form-buttons{
 	display: inline-block;
 }
