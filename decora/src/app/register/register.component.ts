@@ -46,14 +46,17 @@ export class RegisterComponent implements OnInit {
     firstAdmin(){
       this.users = JSON.parse(localStorage.getItem('users'));
 
-      for (var i = 0; i < this.users.length; i++){
-          if (this.users[i] != undefined){
+      if (this.users != null){
+        for (var i = 0; i < this.users.length; i++){
+          if (this.users[i].admin != null){
             if (this.users[i].admin == true){
-              return false;
-            }            
-          } else {
-            return true;
+              return false;  
+            }
           }
+        }
+        return true;
+      } else {
+        return true;
       }
     }
 }
