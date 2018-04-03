@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TitleCasePipe } from '@angular/common';
 
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
@@ -7,7 +8,7 @@ import { UserService } from '../_services/user.service';
   selector: 'app-home',
   moduleId: module.id,
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   currentUser: User;

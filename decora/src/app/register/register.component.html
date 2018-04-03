@@ -14,7 +14,7 @@
 			<mat-form-field>
 				<input matInput type="password" placeholder="Senha" name="password" [(ngModel)]="model.password" #password="ngModel" required>
 			</mat-form-field>
-			<mat-checkbox name="admin" [(ngModel)]="model.admin" #admin="ngModel">Admin</mat-checkbox>
+			<mat-checkbox *ngIf="admin" name="admin" [(ngModel)]="model.admin" #admin="ngModel">Admin</mat-checkbox>
 			<div class="register-form-buttons">
 				<button mat-raised-button class="register-button" [disabled]="loading"> 
 	                <mat-icon>done</mat-icon> Salvar

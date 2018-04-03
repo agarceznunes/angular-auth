@@ -10,10 +10,11 @@
 
 .register-form mat-checkbox{
 	margin-top: 15px;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .register-form-buttons{
+	margin-top: 15px;
 	display: inline-block;
 }
 

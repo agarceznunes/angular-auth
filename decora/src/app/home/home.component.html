@@ -1,26 +1,26 @@
 <div class="home">
 	<mat-card class="users-card">
-	    <h1>Bem vindo, {{currentUser.firstName}}!</h1>
+	    <h1>Bem vindo, {{currentUser.firstName | titlecase}}!</h1>
 	    <h3>Lista de Usuários:</h3>
 	    <table class="users-table">
 	    	<tr>
 	    		<th>Usuário</th>
 	    		<th>Nome Completo</th>
 	    		<th>Admin</th>
-	    		<th></th>
+	    		<th *ngIf="currentUser.admin"></th>
 	    	</tr>
 	        <tr *ngFor="let user of users">
 	            <td>{{user.username}}</td> 
-	            <td>{{user.firstName}} {{user.lastName}}</td>
+	            <td>{{user.firstName | titlecase}}  {{user.lastName | titlecase}}</td>
 	            <td>{{(user.admin === true) ?  'Sim' : 'Não'}}</td>
-	            <td class="center">
+	            <td *ngIf="currentUser.admin" class="center">
 	            	<button mat-mini-fab (click)="deleteUser(user.id)" class="remove-button">
 	            		<mat-icon>delete</mat-icon>
 	            	</button>
 	           	</td>
 	        </tr>
 	    </table>
-	    <button mat-raised-button class="register-button" [routerLink]="['/register']">
+	    <button *ngIf="currentUser.admin" mat-raised-button class="register-button" [routerLink]="['/register']">
 	    	<mat-icon>person_add</mat-icon> Registrar
 	    </button>
 	    <button mat-raised-button class="exit-button" [routerLink]="['/login']">
