@@ -4,11 +4,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
  
-import {MatButtonModule, MatGridListModule, MatInputModule, MatIconModule, MatCardModule} from '@angular/material';
+import {MatButtonModule, MatGridListModule, MatInputModule, MatIconModule, MatCardModule, MatTableModule} from '@angular/material';
  
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { UserService } from './_services/user.service';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { AuthService } from './_services/auth.service';
+import { AuthGuard } from './_guards/auth.guard';
 
 
 import { AppComponent } from './app.component';
@@ -36,10 +38,14 @@ import { RegisterComponent } from './register/register.component';
       MatGridListModule,
       MatInputModule,
       MatIconModule,
-      MatCardModule
+      MatCardModule,
+      MatTableModule
     ],
     providers: [
-      UserService{
+      AuthGuard,
+      AuthService,
+      UserService,
+      {
         provide: HTTP_INTERCEPTORS,
         useClass: JwtInterceptor,
         multi: true

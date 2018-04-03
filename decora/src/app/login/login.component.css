@@ -20,7 +20,7 @@
 	padding: 10px;
 }
 
-.login-body{
+.login-body form{
 	display: flex;
   	flex-direction: column;
   	padding: 30px;
