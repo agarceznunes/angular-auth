@@ -5,7 +5,6 @@
 
 .users-table{
 	border-collapse: collapse;
-	border-radius: 15px;
 	width: 100%;
 	margin-bottom: 30px;
 }
@@ -34,10 +33,58 @@
 	background-color: #3f51b5;
 	color: #fff;
 	width: 150px;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 .exit-button{
 	width: 150px;
-	margin-left: 10px;
+}
+
+@media (max-width: 576px) {
+
+	.register-button{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+	}
+
+	.exit-button{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.users-card{
+		margin: 15px;
+	}
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	thead tr { 
+		display: none;
+	}
+	
+	tr { padding-bottom: 15px; }
+	
+	td { 
+		position: relative;
+		padding-left: 50% !important;
+		text-align: left !important;
+		border: none !important; 
+	}
+	
+	td:before { 
+		position: absolute;
+		top: 10px;
+		left: 5px;
+		width: 45%; 
+		white-space: nowrap;
+	}
+
+	td:nth-of-type(1):before { content: "Usuário"; }
+	td:nth-of-type(2):before { content: "Nome Completo"; }
+	td:nth-of-type(3):before { content: "Admin"; }	
 }

@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   model: any = {};
   loading = false;
   returnUrl: string;
+  error: boolean = false;
   
   constructor(private route: ActivatedRoute, private router: Router,
         		private authenticationService: AuthService) { }
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          //this.alertService.error(error);
+          this.error = true;
           this.loading = false;
         }
     );

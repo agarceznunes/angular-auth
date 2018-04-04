@@ -1,7 +1,7 @@
 <div class="register">
     <mat-card class="register-card">
 	    <h2>Registro de Usuário</h2>
-	    <form name="form" class="register-form" (ngSubmit)="register()" novalidate>
+	    <form name="form" class="register-form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
 	    	<mat-form-field>
 				<input matInput placeholder="Nome" type="text" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required>
 			</mat-form-field>
@@ -20,7 +20,7 @@
 	                <mat-icon>done</mat-icon> Salvar
 	            </button>
 	            <button mat-raised-button class="cancel-button" [routerLink]="['../']"> 
-	                <mat-icon>cancel</mat-icon> Cancelar
+	                <mat-icon>close</mat-icon> Cancelar
 	            </button>
 	        </div>
 	    </form>

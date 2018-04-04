@@ -3,24 +3,28 @@
 	    <h1>Bem vindo, {{currentUser.firstName | titlecase}}!</h1>
 	    <h3>Lista de Usuários:</h3>
 	    <table class="users-table">
-	    	<tr>
-	    		<th>Usuário</th>
-	    		<th>Nome Completo</th>
-	    		<th>Admin</th>
-	    		<th *ngIf="currentUser.admin"></th>
-	    	</tr>
-	        <tr *ngFor="let user of users">
-	            <td>{{user.username}}</td> 
-	            <td>{{user.firstName | titlecase}}  {{user.lastName | titlecase}}</td>
-	            <td>{{(user.admin === true) ?  'Sim' : 'Não'}}</td>
-	            <td *ngIf="currentUser.admin" class="center">
-	            	<span matTooltip="Remover usuário" matTooltipShowDelay="500">
-	            		<button mat-mini-fab (click)="deleteUser(user.id)" class="remove-button">
-	            			<mat-icon>delete</mat-icon>
-	            		</button>
-	            	</span>
-	           	</td>
-	        </tr>
+	    	<thead>
+		    	<tr>
+		    		<th>Usuário</th>
+		    		<th>Nome Completo</th>
+		    		<th>Admin</th>
+		    		<th *ngIf="currentUser.admin"></th>
+		    	</tr>
+		    </thead>
+		    <tbody>	
+		        <tr *ngFor="let user of users">
+		            <td>{{user.username}}</td> 
+		            <td>{{user.firstName | titlecase}}  {{user.lastName | titlecase}}</td>
+		            <td>{{(user.admin === true) ?  'Sim' : 'Não'}}</td>
+		            <td *ngIf="currentUser.admin" class="center">
+		            	<span matTooltip="Remover {{user.username}}" matTooltipShowDelay="500">
+		            		<button mat-mini-fab (click)="deleteUser(user.id)" class="remove-button">
+		            			<mat-icon>delete</mat-icon>
+		            		</button>
+		            	</span>
+		           	</td>
+		        </tr>
+		    </tbody>    
 	    </table>
 	    <button *ngIf="currentUser.admin" mat-raised-button class="register-button" [routerLink]="['/register']">
 	    	<mat-icon>person_add</mat-icon> Registrar
